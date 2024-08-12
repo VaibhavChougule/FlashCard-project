@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
     res.send("hello");
 })
 
+app.get('/show' , (req , res) =>{
+    res.send("showing");
+})
+
 app.post('/insertQue', async (req, res) => {
 
     console.log("req body:", req.body);
