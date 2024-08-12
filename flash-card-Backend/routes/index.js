@@ -11,9 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your client URL
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
+    origin: '*'
   }));
   
 //console.log(connect);
@@ -29,9 +27,6 @@ app.get('/', (req, res) => {
     res.send("hello");
 })
 
-app.get('/show' , (req , res) =>{
-    res.send("showing");
-})
 
 app.post('/insertQue', async (req, res) => {
 
