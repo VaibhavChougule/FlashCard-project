@@ -27,7 +27,7 @@ app.get('/', async(req, res) => {
     let conn = await main();
 
     console.log("hello");
-    res.send("hello" , conn);
+    res.send("hello");
 })
 
 
