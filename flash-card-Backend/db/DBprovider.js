@@ -18,8 +18,8 @@ async function main() {
          minVersion: 'TLSv1.2',
          ca: process.env.TIDB_CA_PATH ? fs.readFileSync(process.env.TIDB_CA_PATH) : undefined
       } : null,
-      enableKeepAlive: true,
-      connectTimeout: 10000, 
+      // enableKeepAlive: true,
+      // connectTimeout: 10000, 
       //acquireTimeout: 10000, 
    }
    try {

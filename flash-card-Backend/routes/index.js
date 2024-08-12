@@ -22,7 +22,10 @@ app.use(express.json());
 
 //const conn = await main();
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+
+    let conn = await main();
+    
     console.log("hello");
     res.send("hello");
 })
