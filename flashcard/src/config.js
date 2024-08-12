@@ -1,5 +1,5 @@
 const config = {
-    API_URL: 'http://192.168.202.211:4000'
+    API_URL: 'https://flash-card-project-seven.vercel.app'
   };
   
   export default config;

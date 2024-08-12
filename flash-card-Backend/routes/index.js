@@ -10,12 +10,17 @@ import main from "../db/DBprovider.js";
 dotenv.config();
 const app = express();
 
+app.use(cors({
+    origin: 'http://localhost:5173', // Replace with your client URL
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+  }));
+  
 //console.log(connect);
 //app.use(bodyParser);
 //express.urlencoded({ extended: false });
 
 app.use(express.json());
-app.use(cors())
 
 //const conn = await main();
 
