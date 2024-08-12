@@ -27,6 +27,13 @@ app.get('/', async(req, res) => {
     console.log("hello");
     res.send("hello");
 })
+app.get('/api', async(req, res) => {
+
+    
+
+    console.log("api");
+    res.send("api");
+})
 
 
 app.post('/insertQue', async (req, res) => {
