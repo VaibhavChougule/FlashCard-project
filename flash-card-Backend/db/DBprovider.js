@@ -31,7 +31,7 @@ async function main() {
       
    } catch (error) {
     console.log("error is:" ,error);
-    return error;
+    return;
     
    }
    

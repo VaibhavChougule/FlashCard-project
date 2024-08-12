@@ -10,9 +10,7 @@ import main from "../db/DBprovider.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({
-    origin: '*'
-  }));
+app.use(cors());
   
 //console.log(connect);
 //app.use(bodyParser);
@@ -24,7 +22,7 @@ app.use(express.json());
 
 app.get('/', async(req, res) => {
 
-    let conn = await main();
+    
 
     console.log("hello");
     res.send("hello");
@@ -117,10 +115,18 @@ app.post('/deleteQue', async (req, res) => {
 
 app.get('/questionList', async (req, res) => {
     console.log("finding");
-    const conn = await main();
-    const [data] = await conn.query(`SELECT * FROM questionSet;`)
-    console.log(data);
-    conn.end();
+    try{
+        const conn = await main();
+        const [data] = await conn.query(`SELECT * FROM questionSet;`)
+        console.log(data);
+        conn.end();
+    }
+    catch(err){
+        console.log("unable to connect to database");
+        
+        res.send("unable to connect to database");
+        return;
+    }
     res.send(data);
 
 })
